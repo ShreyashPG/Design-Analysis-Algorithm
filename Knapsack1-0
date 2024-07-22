@@ -1,0 +1,46 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    //using dynamic programming
+    int p[]={3,4,6,5};
+    int w[]={2,3,1,4};
+      int cap=8;
+      int n=sizeof(w)/sizeof(w[0]);
+    int dp[n+1][cap+1];
+    
+  for(int i=1;i<n;i++)
+  {
+    //for(int j=0;j)
+      for(int j=0;j<cap+1;j++)
+      {
+        dp[i,j]=max(dp[i-1,j],dp[i-1,w[j]-w[i]]+p[i]);
+      
+      }
+  
+  }
+    
+       for(int i=1;i<n;i++)
+  {
+    
+      for(int j=0;j<cap+1;j++)
+      {
+       cout<<dp[i][j]<<" ";
+      
+      }
+      cout<<endl;
+  
+  }
+                                      
+  
+
+
+
+
+
+
+
+  return 0;
+}
